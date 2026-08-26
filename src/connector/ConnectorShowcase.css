@@ -1,0 +1,321 @@
+/* ==========================================================================
+   CONNECTOR SHOWCASE - WHITE LIGHT THEME + NODE GRAPH + RIGHT RAIL
+   ========================================================================== */
+
+/* 1. Left Showcase: Columns 1 to 4 (Full-Bleed White Light Theme Panel) */
+.connector-left-showcase {
+  grid-column: 1 / span 4;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  pointer-events: auto;
+  background-color: #ffffff;
+}
+
+.connector-left-outer-pane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  will-change: clip-path;
+  background-color: #ffffff;
+}
+
+.connector-left-inner-pane {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* White Light Theme Panel */
+.hub-showcase-panel-white {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #ffffff 0%, #f1f3f7 100%);
+  overflow: hidden;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+/* Monochrome Watermark (Single Logo with Increased Opacity) */
+.hub-white-watermark-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hub-white-monochrome-logo {
+  width: min(85vw, 440px);
+  height: min(85vw, 440px);
+  max-width: 90%;
+  max-height: 90%;
+  opacity: 0.42;
+  filter: grayscale(100%) contrast(1.1) brightness(0.75);
+  transition: opacity 0.5s ease, transform 0.6s ease;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Node Network Container */
+.hub-node-network-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 340px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Central Brand Title with Ubuntu Sans font */
+.hub-node-center-heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-align: center;
+}
+
+.hub-ubuntu-brand-title {
+  font-family: 'Ubuntu Sans', 'Nunito Sans', sans-serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* SVG Connector Lines */
+.hub-node-connectors-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 4 Connected Tool Nodes */
+.hub-nodes-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: auto;
+  z-index: 4;
+}
+
+.hub-node-item {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.hub-node-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.hub-node-name {
+  font-family: 'Ubuntu Sans', 'Nunito Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #334155;
+  white-space: nowrap;
+}
+
+/* Positions for the 4 nodes */
+.hub-node-pos-1 {
+  top: 8px;
+  left: 8px;
+}
+
+.hub-node-pos-2 {
+  top: 8px;
+  right: 8px;
+}
+
+.hub-node-pos-3 {
+  bottom: 8px;
+  left: 8px;
+}
+
+.hub-node-pos-4 {
+  bottom: 8px;
+  right: 8px;
+}
+
+/* 2. Right Rail: Exact Column 11 only */
+.connector-right-rail-wrap {
+  grid-column: 11 / span 1;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: auto;
+  padding: 24px 0;
+  box-sizing: border-box;
+}
+
+.connector-right-rail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  will-change: transform;
+}
+
+/* Right Rail Tool Cards - Optimized Hardware Accelerated Glass */
+.rail-tool-card {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+  background: rgba(14, 15, 20, 0.94);
+  border: none;
+  border-radius: 14px;
+  padding: 14px 12px;
+  box-sizing: border-box;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.7);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  cursor: default;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Soft Liquid Ambient Sheen */
+.rail-tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.07) 0%, transparent 65%);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.rail-icon-direct {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.rail-icon-direct svg {
+  color: #ffffff;
+}
+
+.rail-info-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+}
+
+.rail-tool-name {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rail-tool-category {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 9.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rail-status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .connector-left-showcase {
+    grid-column: 1;
+    height: 48vh;
+  }
+
+  .connector-center-badge-anchor {
+    display: none;
+  }
+
+  .connector-right-rail-wrap {
+    display: none;
+  }
+}

@@ -1,0 +1,373 @@
+/* ==========================================================================
+   HERO LEFT - STRICT MONOCHROME & LIGHT PHYSICS
+   Light Source: Top & Top-Right Incident Angle
+   Typography: Nunito Sans (Heading: 400, Subheading: 300)
+   ========================================================================== */
+
+.hero-left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 580px;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Top Badge (Micro-Capsule with Thin White Hairline Border)
+   -------------------------------------------------------------------------- */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.5px solid rgba(255, 255, 255, 0.20);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 12px;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.hero-badge-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* --------------------------------------------------------------------------
+   Heading (Strict 400 Weight, Realistic Light Gradient & Black Shadow)
+   -------------------------------------------------------------------------- */
+.hero-heading {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: -0.028em;
+  color: rgba(255, 255, 255, 0.88);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.82) 55%,
+    rgba(255, 255, 255, 0.70) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.95)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.9));
+  margin: 0 0 20px 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s backwards;
+}
+
+/* --------------------------------------------------------------------------
+   Subheading (Strict 300 Weight, Soft Light Diffusion & Black Shadow)
+   -------------------------------------------------------------------------- */
+.hero-subheading {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  font-weight: 300;
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+  color: rgba(255, 255, 255, 0.44);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.9);
+  max-width: 470px;
+  margin: 0 0 36px 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+/* --------------------------------------------------------------------------
+   Call To Actions (Liquid Top Border Highlight & Kinetic Slide)
+   -------------------------------------------------------------------------- */
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.65s backwards;
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kinetic-btn,
+.kinetic-btn-vertical {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+/* 1. Horizontal Kinetic Track (Primary CTA) */
+.kinetic-text-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+  line-height: 20px;
+}
+
+.kinetic-text-default {
+  grid-area: 1 / 1;
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(0);
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.70) 0%,
+    rgba(255, 255, 255, 0.70) 30%,
+    rgba(255, 255, 255, 1.0) 50%,
+    rgba(255, 255, 255, 0.70) 70%,
+    rgba(255, 255, 255, 0.70) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.85));
+  animation: ctaTextLightPulse 3.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.40s ease;
+}
+
+.kinetic-text-hover {
+  grid-area: 1 / 1;
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(-120%);
+  opacity: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(255, 255, 255, 0.75) 30%,
+    rgba(255, 255, 255, 1.0) 50%,
+    rgba(255, 255, 255, 0.75) 70%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.85));
+  animation: ctaTextLightPulse 3.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.40s ease;
+}
+
+@keyframes ctaTextLightPulse {
+  0%, 15% {
+    background-position: 120% 0;
+  }
+  75%, 100% {
+    background-position: -120% 0;
+  }
+}
+
+.kinetic-btn:hover .kinetic-text-default {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.kinetic-btn:hover .kinetic-text-hover {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 2. Vertical Kinetic Track (Secondary CTA: Top-to-Bottom Flow) */
+.kinetic-vertical-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+  line-height: 20px;
+}
+
+.kinetic-vtext-default {
+  grid-area: 1 / 1;
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateY(0);
+  opacity: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.88) 0%,
+    rgba(255, 255, 255, 0.72) 50%,
+    rgba(255, 255, 255, 0.48) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+  transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.40s ease;
+}
+
+.kinetic-vtext-hover {
+  grid-area: 1 / 1;
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateY(-120%);
+  opacity: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.84) 50%,
+    rgba(255, 255, 255, 0.60) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+  transition: transform 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.40s ease;
+}
+
+.kinetic-btn-vertical:hover .kinetic-vtext-default {
+  transform: translateY(120%);
+  opacity: 0;
+}
+
+.kinetic-btn-vertical:hover .kinetic-vtext-hover {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Primary CTA Button */
+.hero-btn-primary {
+  gap: 8px;
+  padding: 12px 26px;
+  min-width: 146px;
+  border-radius: 9999px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 8px 24px rgba(0, 0, 0, 0.85),
+    0 2px 6px rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.hero-btn-primary:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.06) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 10px 30px rgba(0, 0, 0, 0.9),
+    0 3px 8px rgba(0, 0, 0, 0.95);
+}
+
+.hero-btn-primary:active {
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.kinetic-arrow-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-btn-arrow {
+  color: rgba(255, 255, 255, 0.85);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              color 0.3s ease;
+}
+
+.hero-btn-primary:hover .hero-btn-arrow {
+  transform: translateX(3px);
+  color: rgba(255, 255, 255, 1);
+}
+
+/* Secondary CTA Button */
+.hero-btn-secondary {
+  padding: 12px 24px;
+  min-width: 124px;
+  border-radius: 9999px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.025);
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 6px 20px rgba(0, 0, 0, 0.75), 
+    0 2px 4px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.hero-btn-secondary:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.40);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 8px 24px rgba(0, 0, 0, 0.85);
+}
+
+.hero-btn-secondary:active {
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-left-container {
+    max-width: 100%;
+  }
+
+  .hero-subheading {
+    max-width: 100%;
+  }
+
+  .hero-cta-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}

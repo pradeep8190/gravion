@@ -1,0 +1,59 @@
+/* ==========================================================================
+   CONNECTOR SECTION - MAIN ORCHESTRATOR & 12-COLUMN STICKY VIEWPORT
+   ========================================================================== */
+
+.connector-spacer {
+  width: 100vw;
+  height: 35vh;
+  background-color: #000000;
+  pointer-events: none;
+}
+
+.connector-section {
+  position: relative;
+  width: 100vw;
+  min-height: 800vh; /* 6 steps x 100vh + 200vh curtain transition */
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.connector-curtain-trigger-row {
+  grid-column: 1 / -1;
+  height: 200vh;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Sticky 100vh Viewport (Exact 12-Column Grid)
+   -------------------------------------------------------------------------- */
+.connector-sticky-viewport {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 16px;
+  padding: 0 24px 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Rules
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .connector-sticky-viewport {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}

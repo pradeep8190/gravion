@@ -1,0 +1,193 @@
+/* --------------------------------------------------------------------------
+   Apple-Minimalist Monochrome Pre-Footer CTA Section
+   -------------------------------------------------------------------------- */
+.prefooter-section {
+  position: relative;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: clamp(48px, 6vh, 72px) clamp(24px, 5vw, 80px);
+  box-sizing: border-box;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.prefooter-bg-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 220px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.035) 0%,
+    rgba(255, 255, 255, 0.008) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.prefooter-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.prefooter-badge {
+  display: inline-block;
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 12px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.prefooter-title {
+  font-family: 'Nunito Sans', -apple-system, sans-serif;
+  font-size: clamp(24px, 3.2vw, 42px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 12px;
+  max-width: 650px;
+}
+
+.prefooter-subtitle {
+  font-family: 'Nunito Sans', -apple-system, sans-serif;
+  font-size: clamp(13.5px, 1.1vw, 15.5px);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.55;
+  max-width: 520px;
+  margin-bottom: 24px;
+}
+
+/* CLI Terminal Copy Box */
+.prefooter-cli-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 8px 6px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  margin-bottom: 24px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.prefooter-cli-box:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.prefooter-cli-text {
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+}
+
+.prefooter-cli-prefix {
+  color: rgba(255, 255, 255, 0.35);
+  margin-right: 6px;
+  user-select: none;
+}
+
+.prefooter-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.prefooter-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Action Buttons Group */
+.prefooter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.prefooter-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Nunito Sans', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, box-shadow 0.25s ease;
+}
+
+.prefooter-btn-primary:hover {
+  transform: scale(1.03);
+  background: #f0f0f0;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.2);
+}
+
+.prefooter-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Nunito Sans', -apple-system, sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  padding: 10px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prefooter-btn-secondary:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .prefooter-cli-box {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 16px;
+    width: 100%;
+  }
+  .prefooter-copy-btn {
+    width: 100%;
+  }
+}

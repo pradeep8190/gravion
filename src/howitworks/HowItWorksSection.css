@@ -1,0 +1,24 @@
+.how-it-works-page-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.how-it-works-pinned-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.how-it-works-page-section .how-curtain-overlay {
+  position: relative;
+  transform: none;
+  width: 100%;
+  min-height: 100vh;
+}

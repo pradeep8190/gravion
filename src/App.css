@@ -1,0 +1,101 @@
+.app-main {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #000000;
+  overflow: clip;
+}
+
+.hero-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-content-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(24px, 4.5vw, 60px);
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero-content-wrapper > * {
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Centered Bottom Scroll To Explore (Anchored strictly to Hero 100vh)
+   -------------------------------------------------------------------------- */
+.hero-scroll-center {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+  padding: 0;
+  user-select: none;
+}
+
+.hero-scroll-center-text {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.32) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.hero-scroll-center-arrow {
+  color: rgba(255, 255, 255, 0.40);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.95));
+  animation: centerScrollBob 2.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  transition: color 0.25s ease, filter 0.25s ease;
+}
+
+.hero-scroll-center:hover .hero-scroll-center-text {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.75) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.45));
+}
+
+.hero-scroll-center:hover .hero-scroll-center-arrow {
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.45));
+}
+
+@keyframes centerScrollBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}

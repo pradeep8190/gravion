@@ -1,0 +1,48 @@
+/* ==========================================================================
+   SCROLL FLOAT - 3D CINEMATIC MONOCHROME TYPOGRAPHY
+   ========================================================================== */
+
+.scroll-float {
+  overflow: visible;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px 0;
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+}
+
+.scroll-float-text {
+  display: inline-block;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: clamp(1.8rem, 3.4vw, 3.1rem);
+  font-weight: 350;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  max-width: 960px;
+  margin: 0 auto;
+  color: #ffffff;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transform-style: preserve-3d;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  transform-style: preserve-3d;
+}
+
+.space {
+  display: inline-block;
+}
+
+.char {
+  display: inline-block;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
