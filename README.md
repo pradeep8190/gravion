@@ -1,32 +1,36 @@
-# React + TypeScript + Vite
+# 🌌 Gravion — Kinetic Scroll-Driven AI Agent Stream
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+[![Live Demo](https://img.shields.io/badge/Demo-Live_Preview-brightgreen?style=for-the-badge&logo=vercel)](https://gravion-six.vercel.app)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)](https://react.dev/)
+[![GSAP](https://img.shields.io/badge/GSAP-ScrollTrigger-green?style=flat&logo=greensock)](https://greensock.com/scrolltrigger/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 
-Currently, two official plugins are available:
+> A kinetic narrative landing page showcasing autonomous AI agent telemetry. Powered by reactive background glow shaders, dynamic particle connections, and GSAP ScrollTrigger timelines.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Live Experience**: [https://gravion-six.vercel.app](https://gravion-six.vercel.app)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Features
 
-## Expanding the Oxlint configuration
+- **Live Agent Stream**: Real-time simulated telemetry feeds displaying autonomous agent status.
+- **Reactive Background Glow**: GPU shader glows tracking cursor velocity and scroll position.
+- **Narrative Connector Pipelines**: Animated SVG vector conduits linking orchestration nodes.
+- **Interactive Bento Showcase**: High-density feature modules with hover micro-states.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+---
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## 🛠️ Quick Start
+
+```bash
+git clone https://github.com/pradeep8190/gravion.git
+cd gravion
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## 👤 Author
+
+**Pradeep** — [@pradeep8190](https://github.com/pradeep8190)
